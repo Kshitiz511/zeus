@@ -132,27 +132,31 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <div
-                  key={link.label}
-                  className="relative"
-                  onMouseEnter={() => link.megaMenu ? handleMenuEnter(link.megaMenu) : setActiveMenu(null)}
-                  onMouseLeave={handleMenuLeave}
-                >
-                  <Link
-                    href={link.href}
-                    className="flex items-center gap-1.5 px-4 py-2 font-medium text-zeus-white-soft hover:text-zeus-gold transition-colors duration-300 cursor-pointer"
-                    style={{ fontSize: "0.95rem", minHeight: "44px" }}
+            <div className="hidden lg:flex items-center">
+              {navLinks.map((link, idx) => (
+                <div key={link.label} className="flex items-center">
+                  <div
+                    className="relative"
+                    onMouseEnter={() => link.megaMenu ? handleMenuEnter(link.megaMenu) : setActiveMenu(null)}
+                    onMouseLeave={handleMenuLeave}
                   >
-                    {link.label}
-                    {link.megaMenu && (
-                      <ChevronDown
-                        size={14}
-                        className={`transition-transform duration-300 ${activeMenu === link.megaMenu ? "rotate-180" : ""}`}
-                      />
-                    )}
-                  </Link>
+                    <Link
+                      href={link.href}
+                      className="flex items-center gap-1.5 px-5 py-2 font-medium text-zeus-white-soft hover:text-zeus-gold transition-colors duration-300 cursor-pointer rounded-lg hover:bg-zeus-gold/5"
+                      style={{ fontSize: "0.95rem", minHeight: "44px" }}
+                    >
+                      {link.label}
+                      {link.megaMenu && (
+                        <ChevronDown
+                          size={14}
+                          className={`transition-transform duration-300 ${activeMenu === link.megaMenu ? "rotate-180" : ""}`}
+                        />
+                      )}
+                    </Link>
+                  </div>
+                  {idx < navLinks.length - 1 && (
+                    <span className="w-[3px] h-[3px] rounded-full bg-zeus-gold/30 mx-1 flex-shrink-0" />
+                  )}
                 </div>
               ))}
             </div>

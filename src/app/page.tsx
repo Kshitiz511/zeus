@@ -392,6 +392,54 @@ function Results() {
   );
 }
 
+/* ═══ ACCOLADES ═══ */
+const accolades = [
+  { src: "/accolades/accolade-1.png", alt: "Zeus Consulting Accolade 1" },
+  { src: "/accolades/accolade-2.png", alt: "Zeus Consulting Accolade 2" },
+  { src: "/accolades/accolade-3.png", alt: "Zeus Consulting Accolade 3" },
+  { src: "/accolades/accolade-4.png", alt: "Zeus Consulting Accolade 4" },
+];
+
+function Accolades() {
+  return (
+    <section className="relative overflow-hidden" style={{ paddingBlock: "var(--space-xl)" }}>
+      <div className="z-container">
+        <ScrollReveal>
+          <div className="text-center mb-12">
+            <span className="section-label justify-center">Recognition</span>
+            <h2 className="section-title mt-4">Our Accolades</h2>
+            <p className="section-subtitle mx-auto mt-4">
+              Trusted and recognized for delivering excellence in consulting and business strategy.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.15}>
+          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            {accolades.map((item, i) => (
+              <div
+                key={i}
+                className="relative group transition-all duration-500 hover:scale-105"
+                style={{ maxWidth: "200px" }}
+              >
+                <div className="p-5 rounded-2xl bg-white/5 border border-zeus-gold/10 group-hover:border-zeus-gold/25 group-hover:bg-white/8 transition-all duration-500">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={200}
+                    height={100}
+                    className="object-contain w-full h-auto opacity-85 group-hover:opacity-100 transition-opacity duration-500"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
 /* ═══ WHY ZEUS ═══ */
 function WhyZeus() {
   const points = [
@@ -472,17 +520,19 @@ function FAQ() {
           </div>
         </ScrollReveal>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {faqs.map((faq, idx) => (
             <ScrollReveal key={idx} delay={idx * 0.04}>
-              <div className="glass-card overflow-hidden">
+              <div className="glass-card overflow-hidden" style={{ borderRadius: "16px" }}>
                 <button
                   onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                  className="w-full flex items-center justify-between text-left p-6 cursor-pointer"
-                  style={{ minHeight: "60px" }}
+                  className="w-full flex items-center justify-between text-left cursor-pointer"
+                  style={{ minHeight: "68px", padding: "1.25rem 1.75rem" }}
                 >
-                  <span className="text-zeus-white font-medium pr-4" style={{ fontSize: "1.05rem" }}>{faq.q}</span>
-                  <ChevronDown size={18} className={`text-zeus-gold flex-shrink-0 transition-transform duration-300 ${openIdx === idx ? "rotate-180" : ""}`} />
+                  <span className="text-zeus-white font-medium pr-6" style={{ fontSize: "1.05rem" }}>{faq.q}</span>
+                  <div className="w-9 h-9 rounded-full bg-zeus-gold/10 flex items-center justify-center flex-shrink-0">
+                    <ChevronDown size={16} className={`text-zeus-gold transition-transform duration-300 ${openIdx === idx ? "rotate-180" : ""}`} />
+                  </div>
                 </button>
                 <motion.div
                   initial={false}
@@ -490,7 +540,7 @@ function FAQ() {
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="text-zeus-text-secondary leading-relaxed px-6 pb-6" style={{ fontSize: "1rem" }}>{faq.a}</div>
+                  <div className="text-zeus-text-secondary leading-relaxed" style={{ fontSize: "1rem", padding: "0 1.75rem 1.5rem 1.75rem" }}>{faq.a}</div>
                 </motion.div>
               </div>
             </ScrollReveal>
@@ -552,6 +602,8 @@ export default function Home() {
       <Solutions />
       <div className="gold-line" />
       <Results />
+      <Accolades />
+      <div className="gold-line" />
       <WhyZeus />
       <FAQ />
       <CTA />
