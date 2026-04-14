@@ -176,10 +176,10 @@ export default function GovernmentPage() {
                 end-to-end consulting that helps government agencies operate more
                 efficiently, serve constituents better, and modernize their operations.
               </p>
-              <StaggerContainer className="space-y-4">
+              <StaggerContainer className="space-y-5">
                 {capabilities.map((f) => (
                   <StaggerItem key={f}>
-                    <div className="flex items-start gap-4 p-4 glass-card">
+                    <div className="flex items-center gap-4 px-6 py-5 glass-card">
                       <CheckCircle2
                         size={22}
                         className="text-zeus-gold flex-shrink-0 mt-0.5"

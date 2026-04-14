@@ -35,10 +35,10 @@ export default function IndustryPage() {
               <p className="text-zeus-text-secondary leading-relaxed mb-8" style={{ fontSize: "1.1rem" }}>
                 Our team of specialists brings deep industry knowledge combined with cross-sector expertise to deliver transformative strategies tailored to the unique challenges of technology.
               </p>
-              <StaggerContainer className="space-y-4">
+              <StaggerContainer className="space-y-5">
                 {["Strategic Planning & Roadmap", "Digital Transformation", "Operational Excellence", "Compliance & Risk Management", "Technology Integration", "Growth & Scaling Strategy"].map((f) => (
                   <StaggerItem key={f}>
-                    <div className="flex items-start gap-4 p-4 glass-card">
+                    <div className="flex items-center gap-4 px-6 py-5 glass-card">
                       <CheckCircle2 size={22} className="text-zeus-gold flex-shrink-0 mt-0.5" />
                       <span className="text-zeus-white-soft" style={{ fontSize: "1.05rem" }}>{f}</span>
                     </div>

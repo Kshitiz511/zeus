@@ -41,10 +41,10 @@ export default function ServicePage() {
           <div className="grid lg:grid-cols-2 gap-16">
             <ScrollReveal>
               <h2 className="section-title mb-8">What We <span className="text-zeus-gold">Deliver</span></h2>
-              <StaggerContainer className="space-y-4">
+              <StaggerContainer className="space-y-5">
                 {features.map((f) => (
                   <StaggerItem key={f.label}>
-                    <div className="flex items-start gap-4 p-4 glass-card">
+                    <div className="flex items-center gap-4 px-6 py-5 glass-card">
                       <CheckCircle2 size={22} className="text-zeus-gold flex-shrink-0 mt-0.5" />
                       <span className="text-zeus-white-soft" style={{ fontSize: "1.05rem" }}>{f.label}</span>
                     </div>

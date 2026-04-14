@@ -134,12 +134,13 @@ p { line-height: 1.75; }
   -webkit-backdrop-filter: blur(var(--glass-blur));
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
               border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
-  position: relative; overflow: hidden;
+  position: relative;
 }
 .glass-card::before {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(135deg, var(--glass-highlight), transparent 40%);
   border-radius: inherit; pointer-events: none;
+  overflow: hidden;
 }
 .glass-card:hover {
   border-color: var(--glass-border-bright);
@@ -154,12 +155,13 @@ p { line-height: 1.75; }
   border-radius: clamp(16px, 2vw, 24px);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  position: relative; overflow: hidden;
+  position: relative;
 }
 .glass-card-static::before {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(135deg, var(--glass-highlight), transparent 40%);
   border-radius: inherit; pointer-events: none;
+  overflow: hidden;
 }
 
 .glass-heavy {
