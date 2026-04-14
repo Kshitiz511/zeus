@@ -29,6 +29,7 @@ const footerSections = {
     { label: "Technology", href: "/industries/technology" },
     { label: "Manufacturing", href: "/industries/manufacturing" },
     { label: "Real Estate", href: "/industries/real-estate" },
+    { label: "Government", href: "/industries/government" },
   ],
 };
 
@@ -47,11 +48,11 @@ export function Footer() {
               </div>
               <div className="leading-tight">
                 <span className="font-semibold text-zeus-white tracking-tight block text-lg">ZEUS</span>
-                <span className="text-zeus-gold font-medium block text-[0.65rem] tracking-[0.2em] uppercase -mt-0.5">Consulting Services</span>
+                <span className="text-zeus-gold font-medium block text-[0.6rem] tracking-[0.15em] uppercase -mt-0.5">Clarity. Strategy. Execution.</span>
               </div>
             </div>
             <p className="text-zeus-text-secondary leading-relaxed max-w-sm mb-6" style={{ fontSize: "0.95rem" }}>
-              Forward-thinking, data-driven consulting for businesses seeking expert guidance to scale, innovate, and achieve sustainable growth.
+              Clarity. Strategy. Execution. — We deliver Fortune 500-level consulting that drives measurable results for businesses ready to scale.
             </p>
             <div className="space-y-3">
               <a href="tel:888-448-0748" className="flex items-center gap-3 text-zeus-text-secondary hover:text-zeus-gold transition-colors cursor-pointer" style={{ fontSize: "0.95rem" }}>
@@ -82,6 +83,15 @@ export function Footer() {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="flex items-center justify-center mb-8">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-zeus-gold/15 bg-zeus-gold/5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-zeus-gold"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            <span className="text-zeus-text-secondary" style={{ fontSize: "0.85rem" }}>
+              <span className="text-zeus-gold font-medium">State of Florida Approved</span> Consulting Vendor
+            </span>
+          </div>
         </div>
 
         <div className="gold-line mb-6" />

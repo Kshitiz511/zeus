@@ -56,9 +56,9 @@ export default function AboutPage() {
         <div className="z-container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { target: 500, suffix: "+", label: "Projects Delivered" },
-              { target: 40, suffix: "+", label: "Industries Served" },
-              { target: 98, suffix: "%", label: "Client Satisfaction" },
+              { target: 120, suffix: "M+", prefix: "$", label: "Cost Savings Delivered" },
+              { target: 40, suffix: "+", label: "Industries Transformed" },
+              { target: 98, suffix: "%", label: "Client Retention" },
               { target: 17, suffix: "%", label: "Avg Efficiency Gain" },
             ].map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 0.1}>

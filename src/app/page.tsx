@@ -49,7 +49,7 @@ function Hero() {
               className="section-label mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-zeus-gold animate-pulse" />
-              <span>Strategic Consulting</span>
+              <span>Clarity. Strategy. Execution.</span>
             </motion.div>
 
             <motion.h1
@@ -104,9 +104,9 @@ function Hero() {
               >
                 <div className="space-y-4">
                   {[
-                    { label: "Efficiency Increase", value: "17%", icon: TrendingUp },
-                    { label: "Client Satisfaction", value: "98%", icon: CheckCircle2 },
-                    { label: "Strategic Projects", value: "500+", icon: BarChart3 },
+                    { label: "Avg Client ROI", value: "3.2x", icon: TrendingUp },
+                    { label: "Client Retention Rate", value: "98%", icon: CheckCircle2 },
+                    { label: "Cost Savings Delivered", value: "$120M+", icon: BarChart3 },
                   ].map((stat, i) => (
                     <motion.div
                       key={stat.label}
@@ -151,10 +151,10 @@ function Hero() {
 /* ═══ TRUST BAR ═══ */
 function TrustBar() {
   const stats = [
+    { number: "$2.4B+", label: "Client Revenue Influenced" },
     { number: "17%", label: "Avg Efficiency Increase" },
-    { number: "100+", label: "Businesses Served" },
-    { number: "50+", label: "Industry Sectors" },
-    { number: "24/7", label: "Strategic Support" },
+    { number: "3.2x", label: "Avg Client ROI" },
+    { number: "98%", label: "Client Retention Rate" },
   ];
   return (
     <section className="py-16">
@@ -167,6 +167,18 @@ function TrustBar() {
                 <p className="text-zeus-text-secondary uppercase text-xs tracking-[0.1em] mt-1">{item.label}</p>
               </div>
             ))}
+          </div>
+        </ScrollReveal>
+
+        {/* Florida Approved Vendor Trust Badge */}
+        <ScrollReveal delay={0.15}>
+          <div className="flex items-center justify-center mt-8">
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-zeus-gold/20 bg-zeus-gold/5 backdrop-blur-sm">
+              <Award size={20} className="text-zeus-gold flex-shrink-0" />
+              <span className="text-zeus-text-secondary text-sm tracking-wide">
+                <span className="text-zeus-gold font-semibold">State of Florida Approved</span> Consulting Vendor
+              </span>
+            </div>
           </div>
         </ScrollReveal>
       </div>
@@ -214,8 +226,8 @@ function AboutPreview() {
               </div>
               {/* Floating glass card */}
               <div className="absolute -bottom-6 -left-6 glass-card p-6 max-w-[280px]">
-                <p className="text-zeus-gold font-bold text-3xl mb-1">500+</p>
-                <p className="text-zeus-white text-sm font-medium">Projects delivered across 40+ industries</p>
+                <p className="text-zeus-gold font-bold text-3xl mb-1">$120M+</p>
+                <p className="text-zeus-white text-sm font-medium">In cost savings delivered across 40+ industries</p>
               </div>
               <div className="absolute -top-4 -right-4 w-32 h-32 bg-zeus-gold/10 rounded-full blur-[60px]" />
             </div>
@@ -340,9 +352,9 @@ function Solutions() {
 function Results() {
   const results = [
     { target: 17, suffix: "%", label: "Avg Efficiency Gain" },
-    { target: 500, suffix: "+", label: "Projects Delivered" },
+    { target: 120, suffix: "M+", prefix: "$", label: "Cost Savings Delivered" },
     { target: 98, suffix: "%", label: "Client Retention" },
-    { target: 40, suffix: "+", label: "Industries Served" },
+    { target: 40, suffix: "+", label: "Industries Transformed" },
   ];
 
   return (
@@ -365,7 +377,7 @@ function Results() {
             <span className="section-label justify-center">Our Results</span>
             <h2 className="section-title mt-4">Measurable Impact</h2>
             <p className="section-subtitle mx-auto mt-4">
-              An average increase of 17% in efficiency, profitability, and overall business performance.
+              Our clients don&apos;t just get advice — they get measurable results that impact their bottom line.
             </p>
           </div>
         </ScrollReveal>

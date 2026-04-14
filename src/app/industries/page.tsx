@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Building2, Stethoscope, ShoppingCart, Landmark, Factory, Wifi } from "lucide-react";
+import { ArrowRight, Building2, Stethoscope, ShoppingCart, Landmark, Factory, Wifi, Award } from "lucide-react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/Animations";
 
 const industries = [
@@ -12,6 +12,7 @@ const industries = [
   { title: "Technology", desc: "Scaling tech companies from startup to enterprise with strategic guidance.", href: "/industries/technology", icon: Wifi, img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" },
   { title: "Manufacturing", desc: "Operational excellence, supply chain optimization, and Industry 4.0 adoption.", href: "/industries/manufacturing", icon: Factory, img: "https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80" },
   { title: "Real Estate", desc: "Market analysis, portfolio strategy, and digital transformation for real estate.", href: "/industries/real-estate", icon: Building2, img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" },
+  { title: "Government", desc: "State-approved consulting for public-sector agencies and government contractors.", href: "/industries/government", icon: Award, img: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=600&q=80" },
 ];
 
 export default function IndustriesPage() {

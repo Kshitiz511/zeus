@@ -50,6 +50,7 @@ const industryItems = [
   { label: "Technology", href: "/industries/technology", icon: Wifi },
   { label: "Manufacturing", href: "/industries/manufacturing", icon: Factory },
   { label: "Real Estate", href: "/industries/real-estate", icon: Building2 },
+  { label: "Government", href: "/industries/government", icon: Landmark },
 ];
 
 const navLinks = [
@@ -127,7 +128,7 @@ export function Navbar() {
               </div>
               <div className="leading-tight">
                 <span className="font-semibold text-zeus-white tracking-tight block text-lg">ZEUS</span>
-                <span className="text-zeus-gold font-medium block text-[0.65rem] tracking-[0.2em] uppercase -mt-0.5">Consulting</span>
+                <span className="text-zeus-gold font-medium block text-[0.6rem] tracking-[0.15em] uppercase -mt-0.5">Clarity. Strategy. Execution.</span>
               </div>
             </Link>
 
