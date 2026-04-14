@@ -132,9 +132,9 @@ export function Navbar() {
             </Link>
 
             {/* Desktop Links */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link, idx) => (
-                <div key={link.label} className="flex items-center">
+                <div key={link.label} className="flex items-center gap-1">
                   <div
                     className="relative"
                     onMouseEnter={() => link.megaMenu ? handleMenuEnter(link.megaMenu) : setActiveMenu(null)}
@@ -155,7 +155,7 @@ export function Navbar() {
                     </Link>
                   </div>
                   {idx < navLinks.length - 1 && (
-                    <span className="w-[3px] h-[3px] rounded-full bg-zeus-gold/30 mx-1 flex-shrink-0" />
+                    <span className="h-4 w-px bg-zeus-gold/20 flex-shrink-0" />
                   )}
                 </div>
               ))}
