@@ -39,9 +39,9 @@
   --space-md: clamp(1.25rem, 2.5vw, 2rem);
   --space-lg: clamp(2rem, 4vw, 3.25rem);
   --space-xl: clamp(3.25rem, 6vw, 5.5rem);
-  --space-section: clamp(4.5rem, 9vw, 8rem);
+  --space-section: clamp(4rem, 9vw, 8rem);
   --container-max: 1180px;
-  --container-pad: clamp(1.25rem, 4vw, 4rem);
+  --container-pad: clamp(1rem, 4vw, 4rem);
 
   --background: var(--zeus-white);
   --foreground: var(--zeus-black);
@@ -559,6 +559,29 @@ a[class*="bg-\[#1D2BFF\]"]:hover {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --space-section: 3.25rem;
+    --container-pad: 1rem;
+  }
+
+  html {
+    scroll-padding-top: 90px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 9vw, 2.7rem);
+    line-height: 1.12;
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 7vw, 2.1rem);
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.65;
+  }
+
   .btn-primary,
   .btn-secondary,
   .btn-gold {

@@ -61,7 +61,7 @@ const engagementModels = [
 export default function ServicesPage() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-[var(--zeus-navy)] py-[var(--space-xl)]">
+      <section className="relative overflow-hidden bg-[var(--zeus-navy)] py-14 sm:py-[var(--space-xl)]">
         <Image
           src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1800&q=85"
           alt="Consulting team mapping business priorities"
@@ -74,8 +74,8 @@ export default function ServicesPage() {
         <div className="z-container relative z-10">
           <ScrollReveal className="max-w-4xl">
             <span className="eyebrow text-[var(--zeus-gold-light)]">SERVICES</span>
-            <h1 className="mt-5 text-white">One ecosystem for strategy, leadership, AI, and operating capacity.</h1>
-            <p className="mt-6 max-w-2xl text-lg text-white/80">
+            <h1 className="mt-4 text-white sm:mt-5">One ecosystem for strategy, leadership, AI, and operating capacity.</h1>
+            <p className="mt-5 max-w-2xl text-base text-white/80 sm:mt-6 sm:text-lg">
               Each practice can stand alone. Together they create the business sustainability system executive teams need when growth depends on execution.
             </p>
             <Link href="/book-a-call?source=services_hero" className="btn-gold mt-8">
@@ -88,17 +88,17 @@ export default function ServicesPage() {
 
       <section className="section section-light">
         <div className="z-container">
-          <StaggerContainer className="grid gap-5">
+          <StaggerContainer className="grid gap-4 sm:gap-5">
             {pillars.map((pillar) => (
               <StaggerItem key={pillar.title}>
-                <Link href={pillar.href} className="card-interactive z-card grid gap-8 lg:grid-cols-[0.75fr_1.1fr_0.75fr] lg:items-center">
+                <Link href={pillar.href} className="card-interactive z-card grid gap-5 sm:gap-7 lg:grid-cols-[0.75fr_1.1fr_0.75fr] lg:items-center">
                   <div className="flex items-center gap-4">
                     <span className="flex h-12 w-12 items-center justify-center rounded-md bg-[var(--zeus-sky)] text-[var(--zeus-blue)]">
                       <pillar.icon size={24} strokeWidth={1.7} />
                     </span>
                     <div>
-                      <h2 className="text-2xl">{pillar.title}</h2>
-                      <p className="mt-2 text-sm">{pillar.overview}</p>
+                      <h2 className="text-[1.35rem] sm:text-2xl">{pillar.title}</h2>
+                      <p className="mt-2 text-sm leading-relaxed">{pillar.overview}</p>
                     </div>
                   </div>
                   <ul className="grid gap-2 md:grid-cols-2">
@@ -110,7 +110,7 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                   <div className="lg:text-right">
-                    <p className="text-sm font-bold text-[var(--zeus-blue)]">{pillar.model}</p>
+                    <p className="text-sm font-bold leading-relaxed text-[var(--zeus-blue)]">{pillar.model}</p>
                     <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--zeus-blue)]">
                       Explore
                       <ArrowRight size={15} />
@@ -125,11 +125,11 @@ export default function ServicesPage() {
 
       <section className="section section-muted">
         <div className="z-container">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div className="grid gap-7 sm:gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <ScrollReveal>
               <span className="eyebrow">WHY INTEGRATION WINS</span>
               <h2 className="mt-4">The practice areas are separate only on paper.</h2>
-              <p className="mt-5 text-lg">
+              <p className="mt-5 text-base sm:text-lg">
                 Strategy without leadership development stalls. AI without governance creates risk. Fractional leadership without operating cadence becomes another meeting. Zeus connects the pieces before they become separate workstreams.
               </p>
             </ScrollReveal>

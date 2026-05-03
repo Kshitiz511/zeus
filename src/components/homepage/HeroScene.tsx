@@ -8,7 +8,7 @@ import { ArrowRight, Shield, Zap, Users, BarChart3, Brain, Target, TrendingUp } 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GraphCard } from "./GraphCard";
-import { useReducedMotion } from "@/hooks";
+import { useMediaQuery, useReducedMotion } from "@/hooks";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -157,6 +157,7 @@ export function HeroScene() {
   const miniCard2Ref = useRef<HTMLDivElement>(null);
 
   const reduced = useReducedMotion();
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   // Manually-driven progress for NeuralNetwork3D — synced with GSAP ScrollTrigger
   // (NOT framer-motion's useScroll, which conflicts with GSAP's pin spacer)
@@ -250,18 +251,34 @@ export function HeroScene() {
   }, [reduced]);
 
   /* Reduced motion fallback */
-  if (reduced) {
+  if (reduced || isMobile) {
     return (
-      <section className="relative w-full bg-white py-24 px-6 md:px-12">
+      <section className="relative w-full bg-white px-5 py-16 sm:px-6 md:px-12 md:py-24">
         <div className="mx-auto max-w-[1400px]">
-          <h1 className="text-5xl font-bold text-black">
+          <h1 className="text-[clamp(2rem,8vw,3.2rem)] font-bold text-black">
             Strategy that performs.
           </h1>
-          <p className="mt-6 max-w-xl text-[#5A5F73]">
+          <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[#5A5F73] md:text-base">
             One operating system for sustainable business growth.
           </p>
-          <div className="mt-12">
+          <div className="mt-8 sm:mt-10">
             <GraphCard />
+          </div>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/book-a-call"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#1D2BFF] px-6 text-[15px] font-semibold text-white"
+            >
+              Book a Strategy Call
+              <ArrowRight size={15} />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#E2E4EB] px-6 text-[15px] font-semibold text-[#000000]"
+            >
+              Explore Services
+              <ArrowRight size={15} />
+            </Link>
           </div>
         </div>
       </section>

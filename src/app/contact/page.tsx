@@ -14,8 +14,8 @@ export default function ContactPage() {
         <div className="z-container">
           <ScrollReveal className="max-w-3xl">
             <span className="eyebrow">CONTACT</span>
-            <h1 className="mt-5">Tell us what you are trying to build, fix, or scale.</h1>
-            <p className="mt-5 max-w-2xl text-lg">
+            <h1 className="mt-4 sm:mt-5">Tell us what you are trying to build, fix, or scale.</h1>
+            <p className="mt-5 max-w-2xl text-base sm:text-lg">
               Your message goes to a senior consultant for review. We respond to every inbound within one business day.
             </p>
           </ScrollReveal>
@@ -24,7 +24,7 @@ export default function ContactPage() {
 
       <section className="section section-light">
         <div className="z-container">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.8fr] lg:items-start">
+          <div className="grid gap-7 sm:gap-10 lg:grid-cols-[1.1fr_0.8fr] lg:items-start">
             <ScrollReveal>
               {submitted ? (
                 <div className="z-card bg-[var(--zeus-mint)]">
@@ -38,7 +38,7 @@ export default function ContactPage() {
                     event.preventDefault();
                     setSubmitted(true);
                   }}
-                  className="z-card grid gap-5 bg-[var(--zeus-paper)] md:grid-cols-2"
+                  className="z-card grid gap-4 sm:gap-5 bg-[var(--zeus-paper)] md:grid-cols-2"
                 >
                   <div>
                     <label htmlFor="first-name" className="form-label">
@@ -91,7 +91,7 @@ export default function ContactPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
-              <aside className="space-y-5">
+              <aside className="space-y-4 sm:space-y-5">
                 <div className="z-card">
                   <h2 className="text-2xl">Direct contact</h2>
                   <div className="mt-5 space-y-4">
@@ -101,9 +101,9 @@ export default function ContactPage() {
                     </a>
                     <a
                       href="mailto:info@zeusconsultingservices.com"
-                      className="flex items-center gap-3 font-semibold text-[var(--zeus-slate)] transition-colors hover:text-[var(--zeus-blue)]"
+                      className="flex items-start gap-3 break-all font-semibold text-[var(--zeus-slate)] transition-colors hover:text-[var(--zeus-blue)]"
                     >
-                      <Mail size={18} className="text-[var(--zeus-blue)]" />
+                      <Mail size={18} className="mt-0.5 shrink-0 text-[var(--zeus-blue)]" />
                       info@zeusconsultingservices.com
                     </a>
                     <p className="flex items-start gap-3 font-semibold text-[var(--zeus-slate)]">

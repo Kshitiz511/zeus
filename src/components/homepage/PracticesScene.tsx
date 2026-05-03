@@ -247,7 +247,7 @@ export function PracticesScene() {
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-[0.018]"
         style={{ backgroundImage: "linear-gradient(#1D2BFF 1px, transparent 1px), linear-gradient(90deg, #1D2BFF 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
 
-      <div className="relative mx-auto max-w-[1440px] px-8 md:px-16 lg:px-20"
+      <div className="relative mx-auto max-w-[1440px] px-5 sm:px-6 md:px-12 lg:px-20"
         style={{ paddingTop: "clamp(100px, 10vw, 160px)", paddingBottom: "clamp(80px, 8vw, 120px)" }}>
 
         {/* ═══ SPLIT LAYOUT ═══ */}
@@ -311,7 +311,7 @@ export function PracticesScene() {
 
           {/* ── RIGHT COLUMN: 2×2 CARDS ── */}
           <div className="flex-1 min-w-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-7">
               {PRACTICES.map((p, i) => {
                 const isDark = p.dark;
                 const Illustration = ILLUSTRATIONS[i];
@@ -332,14 +332,14 @@ export function PracticesScene() {
                         boxShadow: isDark
                           ? "0 16px 48px -12px rgba(8,13,40,0.5)"
                           : "0 2px 16px -4px rgba(0,0,0,0.05)",
-                        minHeight: 410,
+                        minHeight: 360,
                       }}>
 
                       {/* ─ Card content with uniform padding ─ */}
-                      <div className="flex-1 flex flex-col pt-20 pl-12 pr-10 pb-10 lg:pt-24 lg:pl-14 lg:pr-12 lg:pb-12">
+                      <div className="flex-1 flex flex-col px-6 pb-7 pt-10 sm:px-8 sm:pb-8 sm:pt-14 lg:px-14 lg:pb-12 lg:pt-24">
 
                         {/* Number + Tag row */}
-                        <div className="flex items-center justify-between mb-10">
+                        <div className="mb-7 flex items-center justify-between sm:mb-10">
 
                           <div className="flex items-center gap-3">
                             <span
@@ -361,7 +361,7 @@ export function PracticesScene() {
                         </div>
 
                         {/* Title */}
-                      <div className="relative flex-1 pt-8">
+                      <div className="relative flex-1 pt-3 sm:pt-6 md:pt-8">
                           {/* Decorative illustration — positioned top-right, shifted left & down */}
                           <div className="absolute right-[-8px] top-[12px] hidden md:block opacity-60">
                             <Illustration />
@@ -373,7 +373,7 @@ export function PracticesScene() {
                             fontWeight: 700,
                             letterSpacing: "-0.01em",
                             lineHeight: 1.3,
-                            maxWidth: "72%",
+                            maxWidth: "100%",
                             paddingTop: "1px",
                             paddingLeft: "1px",
                           }}>
@@ -381,8 +381,10 @@ export function PracticesScene() {
                           </h3>
 
                           {/* Body — below title and illustration */}
-                          <p className="relative z-10 text-[13.5px] leading-[1.8] text-right"
-                            style={{ color: isDark ? "rgba(255,255,255,0.5)" : "#5A5F73", marginTop: 100 }}>
+                          <p
+                            className="relative z-10 mt-6 text-[13.5px] leading-[1.8] text-left sm:mt-10 md:mt-16 md:text-right"
+                            style={{ color: isDark ? "rgba(255,255,255,0.5)" : "#5A5F73" }}
+                          >
                             {p.body}
                           </p>
                         </div>

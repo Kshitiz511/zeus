@@ -86,8 +86,8 @@ export default function ResultsPage() {
         <div className="z-container">
           <ScrollReveal className="max-w-4xl">
             <span className="eyebrow">RESULTS</span>
-            <h1 className="mt-5">Documented outcomes from named businesses.</h1>
-            <p className="mt-5 max-w-2xl text-lg">
+            <h1 className="mt-4 sm:mt-5">Documented outcomes from named businesses.</h1>
+            <p className="mt-5 max-w-2xl text-base sm:text-lg">
               The proof is business change: revenue movement, implementation, staff expansion, operating discipline, and client-reported transformation.
             </p>
           </ScrollReveal>
@@ -96,7 +96,7 @@ export default function ResultsPage() {
 
       <section className="section section-light border-y border-[var(--zeus-line)] py-10">
         <div className="z-container">
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
             {metrics.map((metric) => (
               <div key={metric.label} className="metric-tile">
                 <p className="number">{metric.number}</p>
@@ -112,7 +112,7 @@ export default function ResultsPage() {
 
       <section className="section section-muted">
         <div className="z-container">
-          <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div className="mb-8 flex flex-col gap-4 sm:mb-10 sm:gap-5 md:flex-row md:items-end md:justify-between">
             <ScrollReveal>
               <span className="eyebrow">CASE RESULTS</span>
               <h2 className="mt-4 max-w-3xl">A portfolio of measurable change.</h2>
@@ -132,11 +132,11 @@ export default function ResultsPage() {
                   <div className="mb-5 flex items-start justify-between gap-3">
                     <div>
                       <p className="text-sm font-bold text-[var(--zeus-muted)]">{study.industry}</p>
-                      <h3 className="mt-2 text-xl">{study.business}</h3>
+                      <h3 className="mt-2 text-lg sm:text-xl">{study.business}</h3>
                     </div>
                     <BarChart3 size={22} className="shrink-0 text-[var(--zeus-blue)]" />
                   </div>
-                  <p className="font-heading text-2xl font-bold text-[var(--zeus-blue)]">{study.metric}</p>
+                  <p className="font-heading text-[1.4rem] font-bold text-[var(--zeus-blue)] sm:text-2xl">{study.metric}</p>
                   <p className="mt-3 text-sm text-[var(--zeus-slate)]">{study.detail}</p>
                   <p className="mt-5 text-xs font-bold text-[var(--zeus-muted)]">{study.cohort}</p>
                 </div>
@@ -178,7 +178,7 @@ export default function ResultsPage() {
           <ScrollReveal className="mx-auto max-w-3xl text-center">
             <span className="eyebrow justify-center">YOUR RESULT</span>
             <h2 className="mt-4">Identify what result is realistic before you scope the work.</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-lg">
+            <p className="mx-auto mt-5 max-w-2xl text-base sm:text-lg">
               We will pressure-test the constraint, the outcome, and the conditions required to make the work measurable.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">

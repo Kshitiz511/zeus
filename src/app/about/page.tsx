@@ -34,7 +34,7 @@ const values = [
 export default function AboutPage() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-[var(--zeus-navy)] py-[var(--space-xl)]">
+      <section className="relative overflow-hidden bg-[var(--zeus-navy)] py-14 sm:py-[var(--space-xl)]">
         <Image
           src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1600&q=85"
           alt="Senior consultant in an executive setting"
@@ -47,8 +47,8 @@ export default function AboutPage() {
         <div className="z-container relative z-10">
           <ScrollReveal className="max-w-4xl">
             <span className="eyebrow text-[var(--zeus-gold-light)]">ABOUT ZEUS</span>
-            <h1 className="mt-5 !text-white">Built by operators for executive teams that need the work to land.</h1>
-            <p className="mt-6 max-w-2xl text-lg !text-white">
+            <h1 className="mt-4 !text-white sm:mt-5">Built by operators for executive teams that need the work to land.</h1>
+            <p className="mt-5 max-w-2xl text-base !text-white sm:mt-6 sm:text-lg">
               Zeus Consulting Services was created for leaders who need more than advice. We build the operating conditions that make strategy, leadership, and AI executable.
             </p>
           </ScrollReveal>
@@ -57,13 +57,13 @@ export default function AboutPage() {
 
       <section className="section section-light">
         <div className="z-container">
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div className="grid gap-7 sm:gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <ScrollReveal>
               <span className="eyebrow">OUR ORIGIN</span>
               <h2 className="mt-4">We have sat in the seat, owned the P&L, and led the change.</h2>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
-              <div className="space-y-5 text-lg">
+              <div className="space-y-4 text-base sm:space-y-5 sm:text-lg">
                 <p className="text-[var(--zeus-slate)]">
                   Zeus was built by leaders who spent their careers inside the operating companies they now advise. That experience changes the work. When we build a strategy, we know where execution will break. When we develop leaders, we know what the role actually demands.
                 </p>
@@ -78,7 +78,7 @@ export default function AboutPage() {
 
       <section className="section section-muted">
         <div className="z-container">
-          <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div className="mb-8 flex flex-col gap-4 sm:mb-10 sm:gap-5 md:flex-row md:items-end md:justify-between">
             <ScrollReveal>
               <span className="eyebrow">CREDENTIALS</span>
               <h2 className="mt-4 max-w-3xl">Trust signals that matter before the work begins.</h2>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                   ) : (
                     <CheckCircle2 size={26} className="text-[var(--zeus-green)]" />
                   )}
-                  <p className="mt-5 font-heading text-lg font-bold text-[var(--zeus-ink)]">{credential}</p>
+                  <p className="mt-4 font-heading text-base font-bold text-[var(--zeus-ink)] sm:mt-5 sm:text-lg">{credential}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -136,7 +136,7 @@ export default function AboutPage() {
           <ScrollReveal className="mx-auto max-w-3xl text-center">
             <span className="eyebrow justify-center">WORK WITH ZEUS</span>
             <h2 className="mt-4">Bring operator judgment into the room before the next major initiative.</h2>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <div className="mt-7 flex flex-wrap justify-center gap-3 sm:mt-8">
               <Link href="/book-a-call?source=about" className="btn-gold">
                 Book a Call
                 <ArrowRight size={16} />
