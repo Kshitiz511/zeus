@@ -1,40 +1,38 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { Playfair_Display, DM_Sans } from "next/font/google";
+import { Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { AnalyticsProvider } from "@/components/AnalyticsProvider";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const poppins = Poppins({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const openSans = Open_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Zeus Consulting Services | Smarter Strategies, Stronger Results",
+  title: "Zeus Consulting Services | Strategy, Leadership & AI for Sustainable Business Growth",
   description:
-    "Forward-thinking, data-driven consulting solutions for businesses seeking expert guidance to scale, innovate, and achieve sustainable growth.",
+    "Zeus Consulting partners with executive teams to align strategy, leadership development, and AI into one operating system for sustainable growth. State of Florida Approved Vendor.",
   keywords: [
-    "consulting",
-    "business strategy",
-    "Zeus Consulting",
-    "business growth",
-    "AI implementation",
-    "small business consulting",
+    "executive consulting",
+    "business sustainability",
+    "fractional CXO",
+    "AI readiness consulting",
+    "strategic planning consultant Florida",
+    "leadership development consulting",
   ],
   openGraph: {
     title: "Zeus Consulting Services",
-    description: "Smarter strategies, stronger results. Unlock your business's full potential.",
+    description: "Strategy, Leadership & AI for Sustainable Business Growth.",
     type: "website",
     url: "https://zeusconsultingservices.com",
   },
@@ -46,26 +44,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-GV523QSXWG"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GV523QSXWG');
-          `}
-        </Script>
-      </head>
-      <body className="min-h-screen flex flex-col antialiased">
-        <div className="noise-overlay" />
-        <AnalyticsProvider />
+    <html lang="en" className={`${poppins.variable} ${openSans.variable}`}>
+      <body>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

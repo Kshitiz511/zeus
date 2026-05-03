@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+node_modules*
 /.pnp
 .pnp.*
 .yarn/*
@@ -30,13 +31,13 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files
 .env*
 
 # vercel
 .vercel
 
-# analytics database
+# data / databases
 /data/
 
 # typescript
@@ -44,5 +45,7 @@ yarn-error.log*
 next-env.d.ts
 __pycache__/
 
-# cloned repos
+# reference / design files
+*.docx
+/zeus_raw_data/
 /zeus/

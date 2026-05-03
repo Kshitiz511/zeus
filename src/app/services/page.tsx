@@ -1,69 +1,166 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Zap, BarChart3, Shield, Users, Brain } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, BrainCircuit, BriefcaseBusiness, CheckCircle2, Target, Users } from "lucide-react";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/Animations";
 
-const services = [
-  { icon: Zap, title: "Marketing & Branding", desc: "Brand positioning, growth campaigns, and digital marketing strategy that drives measurable results and builds lasting customer relationships.", href: "/services/marketing", img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" },
-  { icon: BarChart3, title: "Finance", desc: "Financial modeling, capital strategy, and funding guidance to fuel sustainable business growth and secure your financial future.", href: "/services/finance", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" },
-  { icon: Shield, title: "Tax Strategy", desc: "Optimized planning and compliance strategies to maximize your financial assets and minimize tax burden.", href: "/services/tax", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80" },
-  { icon: Users, title: "Human Resources", desc: "Talent acquisition, culture design, and team retention programs that build winning teams and foster growth.", href: "/services/hr", img: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=80" },
-  { icon: Shield, title: "Cybersecurity", desc: "Comprehensive security assessments, compliance frameworks, and advanced threat protection for your business.", href: "/services/cybersecurity", img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80" },
-  { icon: Brain, title: "Business Development", desc: "Market expansion, revenue diversification, and strategic partnership playbooks for accelerated growth.", href: "/services/business-dev", img: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" },
+const pillars = [
+  {
+    icon: Users,
+    title: "Training & Development",
+    href: "/services/training-development",
+    overview: "Build leaders who can execute the strategy you are paying for.",
+    deliverables: ["Leadership academies", "Executive coaching", "Custom curriculum", "Strategic offsites"],
+    model: "6-12 month cohorts or coaching retainers",
+  },
+  {
+    icon: Target,
+    title: "Strategic Planning",
+    href: "/services/strategic-planning",
+    overview: "Turn planning into an operating cadence with KPIs, owners, and review rhythm.",
+    deliverables: ["Growth thesis", "KPI architecture", "Operating cadence", "Process optimization"],
+    model: "2-day offsites through 16-week implementation sprints",
+  },
+  {
+    icon: BrainCircuit,
+    title: "AI Readiness & Implementation",
+    href: "/services/ai-readiness",
+    overview: "Move from AI curiosity to AI capability with roadmaps, pilots, and governance.",
+    deliverables: ["Readiness assessment", "AI roadmap", "Pilot deployment", "Governance framework"],
+    model: "3-4 week diagnostic through 24-week implementation",
+  },
+  {
+    icon: BriefcaseBusiness,
+    title: "Fractional CXO",
+    href: "/services/fractional-cxo",
+    overview: "Embed senior operating leadership where the business needs accountable ownership.",
+    deliverables: ["Fractional COO", "Chief Strategy Officer", "Chief AI Officer", "Transformation lead"],
+    model: "1-3 days per week for 6+ months",
+  },
+];
+
+const engagementModels = [
+  {
+    title: "Project",
+    desc: "Fixed scope, fixed outcome, and clear implementation milestones.",
+    best: "A defined initiative with a clear finish line.",
+  },
+  {
+    title: "Retainer",
+    desc: "Ongoing advisory plus quarterly operating intensives.",
+    best: "Leadership teams that need rhythm and accountability.",
+  },
+  {
+    title: "Fractional",
+    desc: "Embedded executive ownership for a role the business cannot yet hire full time.",
+    best: "Growth, transformation, and operating capacity gaps.",
+  },
 ];
 
 export default function ServicesPage() {
   return (
     <div>
-      <section className="page-hero relative">
-        <div className="absolute inset-0">
-          <Image src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80" alt="Business" fill className="object-cover opacity-12" />
-          <div className="absolute inset-0 bg-zeus-midnight/85" />
-        </div>
-        <div className="page-hero-bg" />
-        <div className="relative z-container text-center" style={{ maxWidth: "900px" }}>
-          <ScrollReveal>
-            <span className="section-label justify-center mb-6">Our Services</span>
-            <h1 style={{ fontSize: "clamp(2.75rem, 5vw, 4.5rem)" }} className="text-zeus-white mb-6">
-              Comprehensive <span className="text-zeus-gold">Expertise</span>
-            </h1>
-            <p className="section-subtitle mx-auto" style={{ fontSize: "1.15rem" }}>
-              Bringing together specialists across key business disciplines, offering a centralized approach to complex challenges.
+      <section className="relative overflow-hidden bg-[var(--zeus-navy)] py-[var(--space-xl)]">
+        <Image
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1800&q=85"
+          alt="Consulting team mapping business priorities"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-[0.26]"
+        />
+        <div className="absolute inset-0 bg-[rgba(15,23,42,0.66)]" aria-hidden="true" />
+        <div className="z-container relative z-10">
+          <ScrollReveal className="max-w-4xl">
+            <span className="eyebrow text-[var(--zeus-gold-light)]">SERVICES</span>
+            <h1 className="mt-5 text-white">One ecosystem for strategy, leadership, AI, and operating capacity.</h1>
+            <p className="mt-6 max-w-2xl text-lg text-white/80">
+              Each practice can stand alone. Together they create the business sustainability system executive teams need when growth depends on execution.
             </p>
+            <Link href="/book-a-call?source=services_hero" className="btn-gold mt-8">
+              Book a Strategy Call
+              <ArrowRight size={16} />
+            </Link>
           </ScrollReveal>
         </div>
       </section>
 
-      <div className="gold-line" />
-
-      <section style={{ paddingBlock: "var(--space-section)" }}>
+      <section className="section section-light">
         <div className="z-container">
-          <StaggerContainer className="space-y-8">
-            {services.map((service, i) => (
-              <StaggerItem key={service.title}>
-                <Link href={service.href} className="block group cursor-pointer">
-                  <div className={`glass-card overflow-hidden grid lg:grid-cols-5 ${i % 2 === 1 ? "" : ""}`}>
-                    <div className={`relative h-64 lg:h-auto lg:col-span-2 ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                      <Image src={service.img} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent to-zeus-navy/50 hidden lg:block" />
+          <StaggerContainer className="grid gap-5">
+            {pillars.map((pillar) => (
+              <StaggerItem key={pillar.title}>
+                <Link href={pillar.href} className="card-interactive z-card grid gap-8 lg:grid-cols-[0.75fr_1.1fr_0.75fr] lg:items-center">
+                  <div className="flex items-center gap-4">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-md bg-[var(--zeus-sky)] text-[var(--zeus-blue)]">
+                      <pillar.icon size={24} strokeWidth={1.7} />
+                    </span>
+                    <div>
+                      <h2 className="text-2xl">{pillar.title}</h2>
+                      <p className="mt-2 text-sm">{pillar.overview}</p>
                     </div>
-                    <div className={`p-8 lg:p-10 lg:col-span-3 flex flex-col justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                      <div className="w-14 h-14 rounded-xl bg-zeus-gold/10 flex items-center justify-center mb-5 group-hover:bg-zeus-gold/20 transition-colors">
-                        <service.icon size={26} className="text-zeus-gold" />
-                      </div>
-                      <h3 className="text-2xl text-zeus-white group-hover:text-zeus-gold transition-colors mb-4">{service.title}</h3>
-                      <p className="text-zeus-text-secondary leading-relaxed mb-6" style={{ fontSize: "1.05rem" }}>{service.desc}</p>
-                      <div className="flex items-center gap-2 text-zeus-gold font-medium" style={{ fontSize: "0.95rem" }}>
-                        Learn More <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-                      </div>
-                    </div>
+                  </div>
+                  <ul className="grid gap-2 md:grid-cols-2">
+                    {pillar.deliverables.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-sm font-semibold text-[var(--zeus-slate)]">
+                        <CheckCircle2 size={16} className="text-[var(--zeus-green)]" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="lg:text-right">
+                    <p className="text-sm font-bold text-[var(--zeus-blue)]">{pillar.model}</p>
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[var(--zeus-blue)]">
+                      Explore
+                      <ArrowRight size={15} />
+                    </span>
                   </div>
                 </Link>
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      <section className="section section-muted">
+        <div className="z-container">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <ScrollReveal>
+              <span className="eyebrow">WHY INTEGRATION WINS</span>
+              <h2 className="mt-4">The practice areas are separate only on paper.</h2>
+              <p className="mt-5 text-lg">
+                Strategy without leadership development stalls. AI without governance creates risk. Fractional leadership without operating cadence becomes another meeting. Zeus connects the pieces before they become separate workstreams.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <div className="grid gap-4 md:grid-cols-3">
+                {engagementModels.map((model) => (
+                  <div key={model.title} className="z-card h-full">
+                    <h3>{model.title}</h3>
+                    <p className="mt-3 text-sm">{model.desc}</p>
+                    <p className="mt-5 text-sm font-bold text-[var(--zeus-slate)]">Best for: {model.best}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-dark">
+        <div className="z-container">
+          <ScrollReveal className="mx-auto max-w-3xl text-center">
+            <span className="eyebrow justify-center">NEXT STEP</span>
+            <h2 className="mt-4">Start with the business constraint, then choose the service.</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg">
+              A 20-minute call is enough to identify whether the next move is strategy, leadership, AI, fractional support, or no consulting at all.
+            </p>
+            <Link href="/book-a-call?source=services_cta" className="btn-gold mt-8">
+              Book a Strategy Call
+              <ArrowRight size={16} />
+            </Link>
+          </ScrollReveal>
         </div>
       </section>
     </div>

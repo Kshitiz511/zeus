@@ -1,0 +1,12 @@
+<svg width="1200" height="320" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="320" fill="white"/>
+  <g transform="translate(70,60)">
+    <rect x="0" y="0" width="200" height="200" rx="20" fill="#05070C"/>
+    <path d="M38 44H162V70H90L162 142V168H38V142H110L38 70V44Z" fill="#1D2BFF"/>
+    <path d="M128 130H148V168H128V130Z" fill="#C9A646"/>
+  </g>
+  <g transform="translate(330,78)">
+    <text x="0" y="86" fill="#05070C" font-size="108" font-family="Inter, Arial, sans-serif" font-weight="700" letter-spacing="12">ZEUS</text>
+    <text x="4" y="132" fill="#1F2937" font-size="24" font-family="Inter, Arial, sans-serif" font-weight="500" letter-spacing="7">CONSULTING SERVICES</text>
+  </g>
+</svg>
